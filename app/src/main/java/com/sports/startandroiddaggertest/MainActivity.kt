@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var networkUtils: NetworkUtils
 
+    private lateinit var mainActivityPresenter: MainActivityPresenter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,7 +24,11 @@ class MainActivity : AppCompatActivity() {
 //        networkUtils = appComponent.getNetworkUtils()
 
 //        2 вариант
-        (application as App).appComponent.injectMainActivity(this)
+//        (application as App).appComponent.injectMainActivity(this)
+
+        mainActivityPresenter = (application as App).appComponent.getMainActivityPresenter()
+
+//        println("!!!!!!!!!!!!!!!!!!!!databaseHelper- ${this::databaseHelper.isInitialized}")
 
     }
 }

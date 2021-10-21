@@ -7,7 +7,12 @@ import dagger.Provides
 class NetworkModule {
 
     @Provides
-    fun provideNetworkUtils(): NetworkUtils {
-        return NetworkUtils()
+    fun provideNetworkUtils(connectionManager: ConnectionManager): NetworkUtils {
+        return NetworkUtils(connectionManager)
+    }
+
+    @Provides
+    fun provideConnectionManager(): ConnectionManager {
+        return ConnectionManager()
     }
 }

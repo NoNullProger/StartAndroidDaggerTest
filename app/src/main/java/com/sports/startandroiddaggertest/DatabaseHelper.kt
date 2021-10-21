@@ -1,4 +1,4 @@
 package com.sports.startandroiddaggertest
 
-class DatabaseHelper {
+class DatabaseHelper(private val repository: Repository) {
 }

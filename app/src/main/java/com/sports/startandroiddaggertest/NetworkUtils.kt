@@ -1,4 +1,4 @@
 package com.sports.startandroiddaggertest
 
-class NetworkUtils {
+class NetworkUtils(private val connectionManager: ConnectionManager) {
 }
